@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triple Pythagoras</title>
+</head>
+<body>
+    <div class="square">
+        <form>
+            <div class="input">
+            Sisi terpendek:
+            <br><input type="text" class="angka" id="angka1"><br>
+            Sisi sedang:
+            <br><input type="text" class="angka" id="angka2"><br>
+            Sisi terpanjang:
+            <br><input type="text" class="angka" id="angka3"><br>
+            </div>
+        </form>
+        <button id="submit" class="submit" onclick="triplePythagoras()">Olah</button>
+        <hr>
+        <div id="pernyataan" class="pernyataan">Status: -</div>
+        <div id="cara" class="pernyataan"></div>
+        <div class="copyr">Created By: Joseph :)</div>
+    </div>
+</body>
+<style>
+    .pernyataan {
+        margin-left: 20%;
+        margin-bottom: 5px;
+        font-family: cursive;
+    }
+    .angka{
+        margin-top: 5px;
+        width: 250px;
+        border-radius: 2px;
+    }
+    .submit{
+        margin-top:5px;
+        margin-left: 20%;
+    }
+    .square{
+        height: 400px;
+        width: 400px;
+        background-color:aquamarine;
+        transform: translateX(100%);
+        margin-top:5%;
+        border-radius: 10vh;
+        align-items: center;
+    }
+    .input{
+        margin-top: 5px;
+        margin-left: 20%;
+        width: 50px;
+    }
+    .copyr{
+        margin-left: 10%;
+        font-family: Lucida Handwriting;
+        bottom: 0;
+        position: absolute;
+    }
+</style>
+<script>
+    function triplePythagoras(){
+        let angka1 = parseFloat(document.getElementById("angka1").value);
+        let angka2 = parseFloat(document.getElementById("angka2").value);
+        let angka3 = parseFloat(document.getElementById("angka3").value);
+
+        let hasil;
+
+        hasil = Math.pow(angka1,2)+Math.pow(angka2,2);
+        if(hasil === Math.pow(angka3,2)){
+            document.getElementById("pernyataan").innerHTML = "Status: Triple Pythaghoras";
+            document.getElementById("cara").innerHTML = angka1+"^2"+" + "+ angka2+"^2"+" = "+angka3+"^2"+"<br>"+Math.pow(angka1,2)+" + "+Math.pow(angka2,2)+" = "+Math.pow(angka3,2)+"<br> <br>"+hasil+" = "+Math.pow(angka3,2)
+        }
+        else{
+            document.getElementById("pernyataan").innerHTML = "Status: Bukan Triple Pythaghoras";
+            document.getElementById("cara").innerHTML = angka1+"^2"+" + "+ angka2+"^2"+" = "+angka3+"^2"+"<br>"+Math.pow(angka1,2)+" + "+Math.pow(angka2,2)+" = "+Math.pow(angka3,2)+"<br> <br>"+hasil+" != "+Math.pow(angka3,2)
+        }
+    }
+</script>
+</html>
